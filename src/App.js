@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { Component, StrictMode } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Main from './Pages/main';
+import About from './Pages/about';
+import Modules from './Pages/modules';
+import Settings from './Pages/settings';
+import FAQ  from './Pages/faq';
+import Helpers from './Pages/helpers';
+import ModuleForm from './Pages/moduleform';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <>
+          <div>
+          <Routes>
+            <Route path='/' element={<Main/>} />
+            <Route path='/modules' element={<Modules/>} />
+            <Route path='/settings' element={<Settings/>} />
+            <Route path='/about' element={<About/>} />
+            <Route path='/faq' element={<FAQ/>} />
+            <Route path='/helpers' element={<Helpers/>} />
+            <Route path='/moduleform' element={<ModuleForm/>} />
+          </Routes>
+          </div>
+      </>
+    );
+  }
 }
 
 export default App;
