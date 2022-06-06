@@ -26,7 +26,7 @@ const Helpers = () => {
     <div id="helpers" className="helpers">
       <h3>Want to contribute?</h3>
       <p>Do register your interest 
-        <a to="/helperform">here!<a>
+        <a to="/helperform">here!</a>
       </p>
     </div>
     </>
