@@ -13,7 +13,7 @@ const BottomNavbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <a href='https://github.com/YSSeah99' activeStyle>
+          <a href='https://github.com/YSSeah99/planner' activeStyle>
             Github
           </a>
           <NavLink to='/faq' activeStyle>
