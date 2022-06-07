@@ -7,6 +7,7 @@ import Settings from './Pages/settings';
 import FAQ  from './Pages/faq';
 import Helpers from './Pages/helpers';
 import ModuleForm from './Pages/moduleform';
+import HelperForm from './Pages/helperform';
 import './App.css';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path='/faq' element={<FAQ/>} />
             <Route path='/helpers' element={<Helpers/>} />
             <Route path='/moduleform' element={<ModuleForm/>} />
+            <Route path='/helperform' element={<HelperForm/>} />
           </Routes>
           </div>
       </>
