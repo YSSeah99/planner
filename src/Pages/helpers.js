@@ -25,9 +25,7 @@ const Helpers = () => {
     </div>
     <div id="helpers" className="helpers">
       <h3>Want to contribute?</h3>
-      <p>Do register your interest 
-        <a to="/helperform">here!</a>
-      </p>
+      <p className="applink">Do register your interest <Link to="/helperform">here!</Link></p>
     </div>
     </>
   );

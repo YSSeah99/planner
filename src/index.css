@@ -43,7 +43,7 @@ footer {
   margin-bottom: -50px;
 }
 
-a {
+.github {
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -53,6 +53,11 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+.github:hover {
+  text-decoration: underline;
+}
+
+.applink Link:hover{
+  color:#ffffff;
   text-decoration: underline;
 }
