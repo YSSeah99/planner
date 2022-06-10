@@ -3,12 +3,26 @@ import Axios from 'axios';
 import FormControlUnstyled from '@mui/base/FormControlUnstyled';
 import ReactDOM from 'react-dom/client';
 
-function HelperForm() {
+const HelperForm = () => {
+    const [helperForm, setHelperForm] = React.useState(initialHelperFormData);
+
+    const updateHelperFormData = (e) => {
+        setHelperForm({
+          ...helperForm,
+
+          [e.target.name]: e.target.value.trim()
+        });
+    };
+
+    const handleHelperSubmit = (e) => {
+      e.preventDefault()
+      console.log(helperForm);
+      // ... submit to API or something
+    };
+    
     useEffect( () => {
       fetchHelperForm();
     }, []);
-
-    const [helperForm, setHelperForm] = useState([]);
 
     const fetchHelperForm = async () => {
       const helperData = await('/helperform');
@@ -16,18 +30,24 @@ function HelperForm() {
       setHelperForm(helperItems);
     };
 
+    const initialHelperFormData = Object.freeze({
+      name: "",
+      email: "",
+      telegram: "",
+      github: "",
+      password: "",
+    });
 
     return (
       <section>
-        {
-          <div className="information">
+         <div className="information">
          <h3>Want to contribute on this site? Fill up the form! No worries, your password is hashed. Once the admin
                 recieves your form, he would PMed you on telegram for your student letter. This is to verify that you
                 are a current NUS student. Upon successful application, you will be able to login and use the site.</h3>
          <form method="post">
            <div>
              <label for="helpername">Name (As in NUS): </label>
-             <input class="form-control form-control-lg" id="name" type="text" name="name" placeholder="Name" required/>
+             <input class="form-control form-control-lg" id="name" type="text" name="name" placeholder=" Full Name" required/>
            </div>
            <div>
              <label for="helperemail">NUS Email: </label>
@@ -50,10 +70,10 @@ function HelperForm() {
              <input type="password" name="passwordtwo" placeholder="Confirm Password" required/> 
            </div>
            <div>
-             <button type="submit">Register</button>
+             <button type="submit" onClick={handleHelperSubmit}>Register</button>
            </div>                
           </form>
-        </div>}
+        </div>
       </section>
     );
 };
